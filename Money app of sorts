@@ -1,0 +1,114 @@
+#Javascript
+
+import React, { Component } from 'react';
+import { View, Text, Button, FlatList } from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+
+const tasks = [
+  { id: 1, title: 'Complete Survey', reward: 5.00 },
+  { id: 2, title: 'Watch Ad', reward: 1.00 },
+  // Add more tasks here
+];
+
+class TaskScreen extends Component {
+  renderTask = ({ item }) => (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+      <Text>{item.title}</Text>
+      <Button title="Complete" onPress={() => this.completeTask(item.id)} />
+      <Text>${item.reward.toFixed(2)}</Text>
+    </View>
+  );
+
+  completeTask = (taskId) => {
+    // Update earnings, mark task as completed, etc.
+    // You'd need to add more logic here to handle these actions.
+    this.forceUpdate(); // Refresh FlatList
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, padding: 20 }}>
+        <FlatList data={tasks} renderItem={this.renderTask} keyExtractor={item => item.id.toString()} />
+      </View>
+    );
+  }
+}
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: TaskScreen,
+      navigationOptions: {
+        title: 'Earn Money Platform',
+      },
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+export default createAppContainer(AppNavigator);
+
+#bash
+npm install react-native react-native-elements react-navigation react-navigation-stack
+
+#app.js
+// Sample tasks data
+const tasks = [
+  { id: 1, title: 'Complete Survey', reward: 5.00 },
+  { id: 2, title: 'Watch Ad', reward: 1.00 },
+  // Add more tasks here
+];
+
+// Elements
+const appContainer = document.getElementById('app');
+
+// Render tasks
+function renderTasks() {
+  const taskList = document.createElement('ul');
+  taskList.id = 'task-list';
+  tasks.forEach(task => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${task.title}</span>
+      <button data-task-id="${task.id}">Complete</button>
+      <span>$${task.reward.toFixed(2)}</span>
+    `;
+    taskList.appendChild(li);
+  });
+  appContainer.innerHTML = '';
+  appContainer.appendChild(taskList);
+}
+
+// Attach event listeners
+appContainer.addEventListener('click', event => {
+  if (event.target.tagName === 'BUTTON') {
+    const taskId = parseInt(event.target.getAttribute('data-task-id'));
+    const completedTask = tasks.find(task => task.id === taskId);
+    if (completedTask) {
+      // Update earnings, mark task as completed, etc.
+      // You'd need to add more logic here to handle these actions.
+      renderTasks(); // Refresh task list
+    }
+  }
+});
+
+// Initial render
+renderTasks();
+
+#index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earn Money Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script src="app.js"></script>
+</body>
+</html>
