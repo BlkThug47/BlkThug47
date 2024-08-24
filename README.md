@@ -1,6 +1,6 @@
-Here's a more professional version of your GitHub profile `README.md`:
 
-```markdown
+
+
 # 👋 Hi, I'm @BlkThug47
 
 Welcome to my GitHub profile! I'm passionate about web development and Python programming, and I'm currently working on an AI mining bot using Python.
