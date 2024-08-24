@@ -25,15 +25,3 @@ I'm developing an AI-powered mining bot using Python. This project aims to autom
 
 Feel free to explore my repositories and get in touch if you'd like to collaborate or have any questions. Thank you for visiting my profile!
 
-<!---
-BlkThug47/BlkThug47 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-```
-
-This version maintains a professional tone while clearly presenting your interests, current learning path, and project details. If you need any further adjustments, just let me know!
-
-Source: Conversation with Copilot, 2024/08/24
-(1) GitHub - eli64s/readme-ai: README file generator, powered by large .... https://github.com/eli64s/README-AI.
-(2) 10 Standout GitHub Profile READMEs - DEV Community. https://dev.to/github/10-standout-github-profile-readmes-h2o.
-(3) README Generator - AI-Powered Documentation Tool. https://www.ai4chat.co/gpt/readmegenerator.
